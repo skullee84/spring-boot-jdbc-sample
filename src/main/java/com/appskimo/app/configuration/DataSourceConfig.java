@@ -1,5 +1,6 @@
 package com.appskimo.app.configuration;
 
+import com.appskimo.app.properties.DataSourceProperties;
 import com.zaxxer.hikari.HikariDataSource;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.mapper.MapperScannerConfigurer;
@@ -46,7 +47,7 @@ public class DataSourceConfig {
 
     // The same as the above.
     @Bean(name = "dataSource", destroyMethod = "close")
-    @ConfigurationProperties(prefix = "spring.datasource.hikari")
+    @ConfigurationProperties(prefix = DataSourceProperties.PREFIX)
     public DataSource dataSource() {
         return DataSourceBuilder.create().type(HikariDataSource.class).build();
     }
