@@ -16,6 +16,9 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableTransactionManagement
 public class DataSourceConfig {
 
+//    @Autowired
+//    private DataSourceProp dataSourceProp;
+
     private HikariConfig getHikariConfig() {
         HikariConfig hikariConfig = new HikariConfig();
         hikariConfig.setDriverClassName("org.mariadb.jdbc.Driver");
@@ -33,7 +36,10 @@ public class DataSourceConfig {
     }
 
     @Bean(name = "hikariDataSource", destroyMethod = "close")
+//    @ConfigurationProperties("spring.datasource.hikari")
     public HikariDataSource hikariDataSource() {
+//        dataSourceProp.getUsername();
+//        DataSourceBuilder.create().type(HikariDataSource.class).build();
         return new HikariDataSource(getHikariConfig());
     }
 

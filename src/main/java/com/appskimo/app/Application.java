@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
  */
 //@SpringBootApplication // same as @Configuration @EnableAutoConfiguration @ComponentScan
 @Configuration
-@ComponentScan
+@ComponentScan(basePackages = "com.appskimo.app")
 @EnableAutoConfiguration(exclude = {DataSourceAutoConfiguration.class})
 public class Application {
 

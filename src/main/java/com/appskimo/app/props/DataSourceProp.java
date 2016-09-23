@@ -12,6 +12,7 @@ import org.springframework.stereotype.Component;
 @ConfigurationProperties("spring.datasource.hikari")
 public class DataSourceProp {
 
+//    @NestedConfigurationProperty
     private String username;
 
 }
