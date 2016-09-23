@@ -27,7 +27,7 @@ repositories {
 
 ext {
     lombok      = '1.16.10'
-    org.aspectj = '1.8.9'
+    aspectj     = '1.8.9'
     cglib       = '3.2.4'
 }
 
@@ -39,8 +39,8 @@ dependencies {
     compile 'org.mybatis:mybatis-spring:1.3.0'
     compile 'org.mariadb.jdbc:mariadb-java-client:1.5.2'
     compile 'com.zaxxer:HikariCP:2.5.1'
-    compile 'org.aspectj:aspectjrt:${org.asapectj}'
-    compile 'org.aspectj:aspectjweaver:${org.asapectj}'
+    compile 'org.aspectj:aspectjrt:${aspectj}'
+    compile 'org.aspectj:aspectjweaver:${aspectj}'
     compile 'cglib:cglib:${cglib}'
     compile 'cglib:cglib-nodep:${cglib}'
     compileOnly 'org.projectlombok:lombok:${lombok}'

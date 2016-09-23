@@ -20,6 +20,31 @@ import javax.sql.DataSource;
 @EnableTransactionManagement(proxyTargetClass = true)
 public class DataSourceConfig {
 
+//    @Bean(name = "dataSourceProperties")
+//    public DataSourceProperties dataSourceProperties() {
+//        return new DataSourceProperties();
+//    }
+
+//    @Autowired
+//    @Bean(name = "hikariDataSource", destroyMethod = "close")
+//    public HikariDataSource hikariDataSource(DataSourceProperties dataSourceProperties) {
+//        HikariConfig hikariConfig = new HikariConfig();
+//        hikariConfig.setDriverClassName(dataSourceProperties.getDriverClassName());
+//        hikariConfig.setJdbcUrl(dataSourceProperties.getJdbcUrl());
+//        hikariConfig.setUsername(dataSourceProperties.getUsername());
+//        hikariConfig.setPassword(dataSourceProperties.getPassword());
+//        hikariConfig.setPoolName(dataSourceProperties.getPoolName());
+//        hikariConfig.setMaximumPoolSize(dataSourceProperties.getMaximumPoolSize());
+//
+//        Map<String, String> sourceProperties = dataSourceProperties.getDataSourceProperties();
+//        hikariConfig.addDataSourceProperty("cachePrepStmts", sourceProperties.get("cachePrepStmts"));
+//        hikariConfig.addDataSourceProperty("prepStmtCacheSize", sourceProperties.get("prepStmtCacheSize"));
+//        hikariConfig.addDataSourceProperty("prepStmtCacheSqlLimit", sourceProperties.get("prepStmtCacheSqlLimit"));
+//
+//        return new HikariDataSource(hikariConfig);
+//    }
+
+    // The same as the above.
     @Bean(name = "dataSource", destroyMethod = "close")
     @ConfigurationProperties(prefix = "spring.datasource.hikari")
     public DataSource dataSource() {

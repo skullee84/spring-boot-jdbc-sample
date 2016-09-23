@@ -1,5 +1,6 @@
 package com.appskimo.app;
 
+import com.appskimo.app.properties.DataSourceProperties;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,8 +20,11 @@ public class PropertyTest {
     @Autowired
     private Environment environment;
 
+    @Autowired
+    private DataSourceProperties dataSourceProperties;
+
     @Test
-    public void testProps() {
+    public void testEnvironments() {
         String[] temp = environment.getActiveProfiles();
         for(String s : temp) {
             display(s);
@@ -28,6 +32,11 @@ public class PropertyTest {
 
         display(environment.getProperty("server.port", String.class));
         display(environment.getProperty("logging.level", String.class));
+    }
+
+    @Test
+    public void testProps() {
+        display(dataSourceProperties);
     }
 
     private void display(Object obj) {
