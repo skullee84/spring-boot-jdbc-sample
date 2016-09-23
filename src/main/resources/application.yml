@@ -1,0 +1,60 @@
+spring:
+  profiles.active: dev
+
+---
+
+spring:
+  profiles: dev
+  datasource:
+    hikari:
+      driver-class-name: org.mariadb.jdbc.Driver
+      jdbc-url: jdbc:mariadb://localhost:3306/develop
+      username: root
+      password:
+      pool-name: hikariCp
+      maximum-pool-size: 5
+      data-source-properties:
+        cachePrepStmts: true
+        prepStmtCacheSize: 250
+        prepStmtCacheSqlLimit: 2048
+
+server:
+  port: 8080
+
+logging:
+  level: DEBUG
+
+
+---
+
+spring:
+  profiles: test
+  datasource:
+    hikari:
+      driver-class-name: org.mariadb.jdbc.Driver
+      jdbc-url: jdbc:mariadb://localhost:3306/develop
+      username: root
+      password:
+
+server:
+  port: 18080
+
+logging:
+  level: INFO
+
+---
+
+spring:
+  profiles: product
+  datasource:
+    hikari:
+      driver-class-name: org.mariadb.jdbc.Driver
+      jdbc-url: jdbc:mariadb://localhost:3306/develop
+      username: root
+      password:
+
+server:
+  port: 28080
+
+logging:
+  level: ERROR
