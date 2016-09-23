@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 /**
  * Created by dominic on 2016. 9. 21..
@@ -12,6 +13,7 @@ import org.springframework.context.annotation.Configuration;
 //@SpringBootApplication // same as @Configuration @EnableAutoConfiguration @ComponentScan
 @Configuration
 @ComponentScan(basePackages = "com.appskimo.app")
+@EnableAspectJAutoProxy(proxyTargetClass = true)
 @EnableAutoConfiguration(exclude = {DataSourceAutoConfiguration.class})
 public class Application {
 

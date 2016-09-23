@@ -35,6 +35,12 @@ spring:
       jdbc-url: jdbc:mariadb://localhost:3306/develop
       username: root
       password:
+      pool-name: hikariCp
+      maximum-pool-size: 5
+      data-source-properties:
+        cachePrepStmts: true
+        prepStmtCacheSize: 250
+        prepStmtCacheSqlLimit: 2048
 
 server:
   port: 18080
@@ -52,6 +58,12 @@ spring:
       jdbc-url: jdbc:mariadb://localhost:3306/develop
       username: root
       password:
+      pool-name: hikariCp
+      maximum-pool-size: 5
+      data-source-properties:
+        cachePrepStmts: true
+        prepStmtCacheSize: 250
+        prepStmtCacheSqlLimit: 2048
 
 server:
   port: 28080

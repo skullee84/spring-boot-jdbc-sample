@@ -1,7 +1,7 @@
 package com.appskimo.app;
 
-import com.appskimo.app.model.User;
-import com.appskimo.app.repository.UserRepository;
+import com.appskimo.app.domain.model.User;
+import com.appskimo.app.domain.repository.UserRepository;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

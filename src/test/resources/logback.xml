@@ -8,6 +8,7 @@
 
   <logger name="org.springframework" level="INFO" />
 
+  <logger name="com.zaxxer.hikari" level="${logging.level}" />
   <logger name="com.appskimo.app" level="${logging.level}" />
 
   <root level="INFO">

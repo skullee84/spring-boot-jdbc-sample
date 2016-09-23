@@ -1,4 +1,4 @@
-package com.appskimo.app.model;
+package com.appskimo.app.domain.model;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
