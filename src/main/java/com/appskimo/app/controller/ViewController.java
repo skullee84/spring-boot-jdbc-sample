@@ -17,11 +17,13 @@ public class ViewController {
     private AppService appService;
 
     @RequestMapping({ "/", "/home" })
-    public void home(ModelMap map) {
+    public String home(ModelMap map) {
         String randomStr = RandomStringUtils.randomAlphanumeric(10);
         map.put("data", randomStr);
 
         appService.post(randomStr);
+
+        return "home";
     }
 
 }
