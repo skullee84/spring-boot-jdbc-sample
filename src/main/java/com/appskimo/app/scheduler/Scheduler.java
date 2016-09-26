@@ -18,12 +18,12 @@ public class Scheduler {
     private static final Logger logger = LoggerFactory.getLogger(Scheduler.class);
 
     @Scheduled(fixedRate = 5000)
-    public void helloWorldTask() {
+    public void fixedRate() {
         logger.info("Fxied rate {}", fastDateFormat.format(new Date()));
     }
 
     @Scheduled(cron = "0/10 * * * * *")
-    public void runEvery10Sec() {
+    public void cronExpression() {
         logger.info("Cron expression {}", fastDateFormat.format(new Date()));
     }
 
