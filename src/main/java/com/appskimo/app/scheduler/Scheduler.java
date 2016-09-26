@@ -14,7 +14,7 @@ import java.util.Date;
 @Component
 public class Scheduler {
 
-    private static final FastDateFormat fastDateFormat = FastDateFormat.getInstance("YYYY/MM/DD HH:mm:ss");
+    private static final FastDateFormat fastDateFormat = FastDateFormat.getInstance("yyyy/MM/dd HH:mm:ss");
     private static final Logger logger = LoggerFactory.getLogger(Scheduler.class);
 
     @Scheduled(fixedRate = 5000)

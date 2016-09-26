@@ -1,4 +1,4 @@
-package com.appskimo.app.controller;
+package com.appskimo.app.support.handler;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
