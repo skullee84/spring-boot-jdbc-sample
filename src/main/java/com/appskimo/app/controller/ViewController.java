@@ -16,7 +16,10 @@ public class ViewController {
     @Autowired
     private AppService appService;
 
-    @RequestMapping({ "/", "/home" })
+    @RequestMapping("/signin")
+    public void login() {}
+
+    @RequestMapping({"/", "/home"})
     public String home(ModelMap map) {
         String randomStr = RandomStringUtils.randomAlphanumeric(10);
         map.put("data", randomStr);

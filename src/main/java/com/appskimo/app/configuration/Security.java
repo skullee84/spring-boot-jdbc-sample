@@ -6,6 +6,7 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 /**
  * Created by dominic on 2016. 9. 26..
@@ -18,15 +19,23 @@ public class Security extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
             .authorizeRequests()
-            .antMatchers("/", "/home").permitAll()
-            .anyRequest().authenticated()
+                .antMatchers("/signin")
+                .permitAll()
+                .anyRequest()
+                .authenticated()
             .and()
-            .formLogin()
-            .loginPage("/login")
-            .permitAll()
+                .formLogin()
+                .loginProcessingUrl("/auth/signin")
+                .usernameParameter("j_username")
+                .passwordParameter("j_password")
+                .loginPage("/signin")
+                .defaultSuccessUrl("/home", Boolean.TRUE)
+                .permitAll()
             .and()
-            .logout()
-            .permitAll();
+                .logout()
+                .logoutRequestMatcher(new AntPathRequestMatcher("/auth/signout"))
+                .logoutSuccessUrl("/signin")
+                .permitAll();
     }
 
     @Autowired

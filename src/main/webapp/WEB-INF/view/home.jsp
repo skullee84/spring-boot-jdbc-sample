@@ -9,6 +9,8 @@
   </head>
 
   <body>
-  <h2>Hello! ${data}</h2>
+    <h2>this is a home!</h2>
+    <a href="/data">data</a>
+    <a href="/auth/signout">signout</a>
   </body>
 </html>
