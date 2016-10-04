@@ -9,6 +9,10 @@ import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
 /**
  * Created by dominic on 2016. 9. 23..
  */
@@ -29,6 +33,11 @@ public class AppServiceImpl implements AppService {
 
         userRepository.insert(user);
         publisher.publishEvent(new Event(eventName));
+    }
+
+    @Override
+    public List<Integer> getData() {
+        return IntStream.range(0, 10).boxed().collect(Collectors.toList());
     }
 
 }
