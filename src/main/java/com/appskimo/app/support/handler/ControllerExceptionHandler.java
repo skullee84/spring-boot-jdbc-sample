@@ -1,5 +1,6 @@
 package com.appskimo.app.support.handler;
 
+import com.appskimo.app.common.exception.OrderValidationException;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
 import org.springframework.http.HttpStatus;
@@ -33,8 +34,14 @@ public class ControllerExceptionHandler {
         return new Response(String.format("뭐시 널이여? :: %s", e.getLocalizedMessage()));
     }
 
+    @ExceptionHandler(OrderValidationException.class)
+    @ResponseStatus(value = HttpStatus.NOT_ACCEPTABLE)
+    @ResponseBody
+    public Object orderValidationException(OrderValidationException e) {
+        return new Response(e.getMessage());
+    }
+
     @Data
-    @SuppressWarnings("unused")
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private static class Response implements Serializable {
         private static final long serialVersionUID = -4957830252024818470L;

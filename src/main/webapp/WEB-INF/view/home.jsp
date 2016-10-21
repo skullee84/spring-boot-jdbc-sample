@@ -10,7 +10,9 @@
 
   <body>
     <h2>this is a home!</h2>
-    <a href="/data">data</a>
-    <a href="/auth/signout">signout</a>
+    <a href="/data">data</a><br />
+    <a href="/exception/default">default exception</a><br />
+    <a href="/exception/order">order exception</a><br />
+    <a href="/auth/signout">signout</a><br />
   </body>
 </html>
