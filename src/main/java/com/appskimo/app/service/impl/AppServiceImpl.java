@@ -19,14 +19,17 @@ import java.util.stream.IntStream;
 @Component
 public class AppServiceImpl implements AppService {
 
-    @Autowired
-    private ApplicationEventPublisher publisher;
+    private final ApplicationEventPublisher publisher;
+    private final UserRepository userRepository;
 
     @Autowired
-    private UserRepository userRepository;
+    public AppServiceImpl(ApplicationEventPublisher publisher, UserRepository userRepository) {
+        this.publisher = publisher;
+        this.userRepository = userRepository;
+    }
 
     @Override
-    @Transactional(readOnly = false, rollbackFor = Exception.class)
+    @Transactional(rollbackFor = Exception.class)
     public void post(String eventName) {
         User user = new User();
         user.setName(eventName);

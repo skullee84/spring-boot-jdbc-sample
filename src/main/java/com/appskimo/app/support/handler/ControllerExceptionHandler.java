@@ -47,11 +47,11 @@ public class ControllerExceptionHandler {
         private static final long serialVersionUID = -4957830252024818470L;
         private Map<String, Object> result = new HashMap<>();
 
-        protected Response(String value) {
+        Response(String value) {
             result.put("msg", value);
         }
 
-        protected Response(List<FieldError> errors) {
+        Response(List<FieldError> errors) {
             for (FieldError error : errors ) {
                 result.put(error.getField(), error.getDefaultMessage());
             }
