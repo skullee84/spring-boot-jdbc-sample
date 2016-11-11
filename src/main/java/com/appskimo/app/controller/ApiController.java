@@ -15,7 +15,12 @@ import java.util.Map;
 @RestController
 public class ApiController {
 
-    @Autowired private AppService appService;
+    private final AppService appService;
+
+    @Autowired
+    public ApiController(AppService appService) {
+        this.appService = appService;
+    }
 
     @RequestMapping("/data")
     public Object data() {

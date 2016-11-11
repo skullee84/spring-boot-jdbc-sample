@@ -13,8 +13,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class ViewController {
 
+    private final AppService appService;
+
     @Autowired
-    private AppService appService;
+    public ViewController(AppService appService) {
+        this.appService = appService;
+    }
 
     @RequestMapping("/signin")
     public void login() {}
