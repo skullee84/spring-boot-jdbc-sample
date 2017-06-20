@@ -1,6 +1,7 @@
 package com.appskimo.app;
 
 import com.appskimo.app.properties.DataSourceProperties;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 /**
  * Created by dominic on 2016. 9. 19..
  */
+@Ignore
 @ActiveProfiles("dev")
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = {Application.class})

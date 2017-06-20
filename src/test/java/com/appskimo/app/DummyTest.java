@@ -2,6 +2,7 @@ package com.appskimo.app;
 
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.LinkedList;
@@ -15,6 +16,7 @@ import java.util.stream.IntStream;
 /**
  * Created by dominic on 2017-02-13.
  */
+@Ignore
 public class DummyTest {
 
     private static final int RANDOM_POOL = 10000000;
